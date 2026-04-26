@@ -1,10 +1,10 @@
-const BASE_URL = "http://127.0.0.1:8000";
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL
 
 export async function uploadDocx(file) {
   const fd = new FormData();
   fd.append("file", file);
 
-  const res = await fetch(`${BASE_URL}/v1/ingest/docx`, {
+  const res = await fetch(`${API_BASE_URL}/v1/ingest/docx`, {
     method: "POST",
     body: fd,
   });
@@ -17,7 +17,7 @@ export async function uploadDocx(file) {
 }
 
 export async function sendChat(question, { top_k = 10, dist_threshold = 2.0 } = {}) {
-  const res = await fetch(`${BASE_URL}/v1/chat`, {
+  const res = await fetch(`${API_BASE_URL}/v1/chat`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ question, top_k, dist_threshold }),
