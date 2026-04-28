@@ -63,7 +63,6 @@ const messages = ref([
 - LLM: OpenAI GPT-4o mini
 - Embedding: OpenAI text-embedding-3-small
 - Vector Database: Pinecone
-- RAG Pipeline: 문서 임베딩, 벡터 검색, 답변 생성
 - Deployment: Vercel, Render
 - Version Control: Git, GitHub
 `
