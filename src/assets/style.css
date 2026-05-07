@@ -64,7 +64,6 @@
 .msg {
   display: grid;
   grid-template-columns: 42px 1fr;
-  gap: 10px;
   margin-bottom: 12px;
   align-items: start;
 }

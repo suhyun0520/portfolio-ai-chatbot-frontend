@@ -7,7 +7,7 @@
                     <div class="appname">AI 포트폴리오 챗봇</div>
                 </div>
 
-                <label class="upload">
+                <label v-if="isDocxButton" class="upload">
                     <input type="file" accept=".docx" @change="onUpload" />
                     docx 업로드
                 </label>
@@ -71,6 +71,7 @@ const messages = ref([
 
 const input = ref("");
 const isLoading = ref(false);
+const isDocxButton = ref(false);
 const lastSources = ref([]);
 const chatAreaRef = ref(null);
 
@@ -113,7 +114,18 @@ async function onUpload(e) {
 async function onSend() {
     const q = input.value.trim();
     if (!q || isLoading.value) return;
-
+    console.log(q)
+    console.log(typeof q)
+    if (q == "upload file docx button show") {
+        isDocxButton.value = true;
+        input.value = "";
+        return;
+    }
+    else if (q == "upload file docx button hide") {
+        isDocxButton.value = false;
+        input.value = "";
+        return;
+    }
     messages.value.push({ role: "user", content: q });
     input.value = "";
     lastSources.value = [];
@@ -121,7 +133,7 @@ async function onSend() {
 
     try {
         isLoading.value = true;
-        const data = await sendChat(q, { top_k: 7, dist_threshold: 2.0 });
+        const data = await sendChat(q, { top_k: 5, dist_threshold: 2.0 });
 
         messages.value.push({ role: "assistant", content: data.answer || "(응답 없음)" });
         lastSources.value = data.sources || [];
