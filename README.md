@@ -1,29 +1,63 @@
-# vue-project
+# AI Portfolio Chatbot Frontend
 
-This template should help get you started developing with Vue 3 in Vite.
+이 프로젝트는 이력서 및 포트폴리오 문서를 기반으로 질문에 답변하는  
+**AI 포트폴리오 챗봇의 프론트엔드**입니다.
 
-## Recommended IDE Setup
+사용자가 자연스럽게 질문을 입력하고,  
+문서 기반 답변을 채팅 형태로 확인할 수 있도록 구현했습니다.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
 
-## Customize configuration
+## Project Overview
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+기존 포트폴리오는 문서나 링크 중심으로 전달되는 경우가 많아  
+사용자가 원하는 정보를 직접 찾아야 하는 불편함이 있습니다.
 
-## Project Setup
+이 프로젝트는 포트폴리오를 **질문형 인터페이스**로 바꾸어  
+사용자가 궁금한 내용을 직접 질문하고 바로 답변받을 수 있도록 만든 프로젝트입니다.
 
-```sh
-npm install
-```
+프론트엔드는 다음과 같은 부분에 초점을 맞추어 구현했습니다.
 
-### Compile and Hot-Reload for Development
+- 직관적인 채팅 UI
+- 질문과 답변 흐름이 자연스럽게 보이는 화면 구성
+- 백엔드 API와 안정적인 연동
+- 포트폴리오 프로젝트에 어울리는 깔끔한 인터페이스
 
-```sh
-npm run dev
-```
 
-### Compile and Minify for Production
+## Main Features
 
-```sh
-npm run build
-```
+- 채팅 기반 질문 / 답변 UI
+- 문서 기반 답변 출력
+- 백엔드 API 연동
+- 사용자 입력창 구성
+- 응답 로딩 상태 표시
+- 대화 내역 표시
+- 반응형 화면 구성
+
+
+## Why I Built This
+
+기존 포트폴리오는 사용자가 문서를 직접 읽어야 하고,  
+원하는 정보를 빠르게 찾기 어려울 수 있다고 생각했습니다.
+
+그래서 포트폴리오를 단순한 문서가 아니라  
+**직접 질문하고 답변받는 형태**로 보여주면 더 직관적이라고 생각했고,  
+이를 실제로 구현하기 위해 이 프로젝트를 만들었습니다.
+
+
+## Tech Stack
+
+- **Framework**: Vue.js
+- **Build Tool**: Vite
+- **Language**: JavaScript
+- **Styling**: Tailwind CSS
+- **Deployment**: Vercel
+- **Version Control**: Git, GitHub
+
+
+## User Flow
+
+1. 사용자가 질문을 입력합니다.
+2. 프론트엔드는 질문을 백엔드 API로 전송합니다.
+3. 백엔드는 문서 기반으로 답변을 생성합니다.
+4. 프론트엔드는 응답을 받아 채팅 화면에 출력합니다.
+5. 사용자는 이어서 추가 질문을 입력할 수 있습니다.
