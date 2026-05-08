@@ -17,7 +17,8 @@
             <main class="chat" ref="chatAreaRef">
                 <div v-for="(m, i) in messages" :key="i" class="msg" :class="m.role">
                     <div class="meta">{{ formatRole(m.role) }}</div>
-                    <div class="bubble">{{ m.content }}</div>
+                    <div class="bubble" v-if="m.isHtml" v-html="m.content"></div>
+                    <div class="bubble" v-else>{{ m.content }}</div>
                 </div>
                 <div v-if="isLoading" class="loading">처리 중…</div>
             </main>
@@ -45,6 +46,7 @@ import { uploadDocx, sendChat } from "./api";
 const messages = ref([
   {
     role: "assistant",
+    isHtml: true,
     content: `안녕하세요!
 저는 이수현님의 포트폴리오 문서를 기반으로 답변하는 AI 챗봇입니다.
 
@@ -56,6 +58,10 @@ const messages = ref([
 - 사용 가능한 기술 스택은 무엇인가요?
 - 백엔드 개발 경험이 있나요?
 - 주요 경력과 담당 업무를 알려주세요.
+
+GitHub
+- <a href="https://github.com/suhyun0520/portfolio-ai-chatbot-frontend" target="_blank" rel="noopener noreferrer">Frontend Repository</a>
+- <a href="https://github.com/suhyun0520/portfolio-ai-chatbot-backend" target="_blank" rel="noopener noreferrer">Backend Repository</a>
 
 <이 챗봇에 사용한 기술>
 - FrontEnd: Vue3, JavaScript, CSS
