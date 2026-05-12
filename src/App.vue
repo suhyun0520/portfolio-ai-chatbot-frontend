@@ -58,6 +58,7 @@ const messages = ref([
 - 사용 가능한 기술 스택은 무엇인가요?
 - 백엔드 개발 경험이 있나요?
 - 주요 경력과 담당 업무를 알려주세요.
+그 외에도 궁금한 점이 있다면 자유롭게 질문해주세요!
 
 GitHub
 - <a href="https://github.com/suhyun0520/portfolio-ai-chatbot-frontend" target="_blank" rel="noopener noreferrer">Frontend Repository</a>
